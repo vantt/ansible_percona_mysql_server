@@ -1,0 +1,8 @@
+---
+- name: Install extra repositories
+  yum: name=http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm state=latest
+
+- name: Install Percona-Server-client
+  yum: name=Percona-Server-server-{{percona_mysql_version}}.x86_64 state=latest 
+  yum: name=Percona-Server-devel-{{percona_mysql_version}}.x86_64  state=latest
+  yum: name=Percona-Server-shared-{{percona_mysql_version}}.x86_64 state=latest
